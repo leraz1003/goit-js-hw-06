@@ -19,7 +19,7 @@ list.classList.add('img-list')
 
 const newImagesList = images.map(image =>{
   return `<li class="img-item"><img src=${image.url}, alt=${image.alt}, width=100%, class="img"</li>`
-})
+}).join('')
 
 
 list.insertAdjacentHTML('afterbegin', newImagesList)
