@@ -12,20 +12,20 @@ const createBtn = document.querySelector('button[data-create]');
 const destroyBtn = document.querySelector('button[data-destroy]');
 const input  = block.firstElementChild;
 
-function createBoxes(amount) {
-  amount = input.value;
+function createBoxes() {
+  let amount = input.value;
   let initialSize = 30;
-  const createBox = document.createElement("div");
+  
 
   for (let i = 0; i < amount; i++) {
+    const createBox = document.createElement("div");
     initialSize += 10;
     createBox.style.width = `${initialSize}px`;
     createBox.style.height = `${initialSize}px`;
     createBox.style.margin = "5px";
     createBox.style.backgroundColor = getRandomHexColor();
+    newBox.appendChild(createBox);
   }
-
-  newBox.append(createBox)
 }
 
 
