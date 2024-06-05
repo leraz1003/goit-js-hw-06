@@ -9,19 +9,19 @@ class StringBuilder{
 
     getValue() {
         return this.#value;
+        
     }
 
     padEnd(str) {
-        this.#value = this.#value.padEnd(3, str);
+        this.#value += str;
     }
 
     padStart(str) {
-        this.#value= this.#value.padStart(2, str);
+        this.#value = str + this.#value;
     }
 
     padBoth(str) {
-        this.#value = this.#value.padEnd(4, str);
-        this.#value = this.#value.padStart(5, str); 
+        this.#value = str + this.#value + str;
     }
 
 }
@@ -29,10 +29,13 @@ class StringBuilder{
 
 const builder = new StringBuilder(".");
 console.log(builder.getValue()); // "."
+
 builder.padStart("^");
 console.log(builder.getValue()); // "^."
+
 builder.padEnd("^");
 console.log(builder.getValue()); // "^.^"
+
 builder.padBoth("=");
 console.log(builder.getValue()); // "=^.^="
 
